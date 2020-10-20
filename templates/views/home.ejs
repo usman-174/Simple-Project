@@ -1,0 +1,18 @@
+<%- include('../paritals/head.ejs') %>
+ <!--Write CODE HERE  -->
+ <title><%= title %></title>
+ <body class="bg-info">
+<div class="container">
+    <div class="row my-5">
+        
+        <div class="col-md-6 offset-md-3  bg-white " style="border-radius: 10px;box-shadow: 2px 2px 10px 2px olive;">
+            <h1 class="text-center">Fill Form</h1><hr>
+            <form action="/form" method="POST" autocomplete="off">
+            <%- include('../paritals/addoredit.ejs') %>
+        </form>
+        </div>
+    </div>
+</div>
+
+ <!-- End COde HERE -->
+ <%- include('../paritals/foot.ejs') %>

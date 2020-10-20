@@ -1,0 +1,63 @@
+<%- include('../paritals/head.ejs') %>
+<!--Write CODE HERE  -->
+<style>
+    .fa-trash{
+        color: crimson;
+    }
+    .fa-pencil{
+        color:deepskyblue
+    }
+</style>
+<body>
+    <div class="container-fluid">
+        <div class="row ">
+            <div class="col-md-11 offset-4">         
+                <h1> <a href="/home" class="btn btn-success mr-4">
+                    <i class="fa fa-plus " aria-hidden="true"></i> Add new</a> DATABASE</h1>
+            </div>
+            
+        </div>
+        <div class="d-flex justify-content-center">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="">
+                        <table class="table table-bordered table-hover table-striped table-inverse table-responsive">
+                            <thead class="thead-inverse thead-dark">
+                                <tr>
+                                    <th>Full name</th>
+                                    <th>Email</th>
+                                    <th>Mobile</th>
+                                    <th>City</th>
+                                    <th>Modify</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% result.forEach(result => { %>
+                                <tr>
+                                    <td scope="row"><%= result.fullname %> </td>
+                                    <td><%= result.email %> </td>
+                                    <td><%= result.mobile %> </td>
+                                    <td><%= result.city %> </td>
+                                    <td>
+                                        <a href="/edit/<%= result._id %> "><i class="fa fa-pencil" aria-hidden="true"></i></a>
+
+                                        <a href="/form/delete/<%= result._id %> "  onclick="return confirm('Are you sure u want to  delete this record?')" class="px-3"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                                    </td>
+                                </tr>
+                                <% }); %>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+
+    <!-- End COde HERE -->
+    <%- include('../paritals/foot.ejs') %>
